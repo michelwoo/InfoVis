@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title> GDP per capita VS Life Expectancy </title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+	<!-- Bootstrap and Bootstrap-Select -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+</head>
+<body>
+	<div class="pageContainer">
+		<div class="column">
+			<div id="world"></div>
+			<div class="controls">
+				<div class="sliderContainer">
+					<input id="slider" type="range" min="1960" max="2016" value="1960" step="1" />
+					<span class="currentYear" id="range">1960</span>
+				</div>
+				<button class="yearNavButton" name="play" id="play">Play</button>
+				<div class="yearNavigation">
+					<button class="yearNavButton" name="previousYear" id="previousYear"><</button>
+					<button class="yearNavButton" name="nextYear" id="nextYear">></button>
+				</div>
+				<div class="countryFilter" id="country-filter-name">
+					 <label>Selected countries : </label>
+					 <select class="selectpicker" id="menu" name="country-picker" multiple data-actions-box="true" data-size="10">
+						<optgroup id="Africa" label="AFRICA">
+						</optgroup>
+						<optgroup id="Asia" label="ASIA">
+						</optgroup>
+						<optgroup id="Europe" label="EUROPE">
+						</optgroup>
+						<optgroup id="NorthAmerica" label="NORTH AMERICA">
+						</optgroup>
+						<optgroup id="SouthAmerica" label="SOUTH AMERICA">
+						</optgroup>
+						<optgroup id="Oceania" label="OCEANIA">
+						</optgroup>
+					 </select>
+					 <br>
+					 <label>Quick Selection: </label>
+					 <div class="btn-group">
+						<button class="quickSelectButton" id="selectAllButton">Select All</button>
+						<button class="quickSelectButton" id="deselectAllButton">Deselect All</button>
+						 <div>
+							<button class="quickSelectButton continentButton" id="Africa_button">Africa</button>
+							<button class="quickSelectButton continentButton" id="Asia_button">Asia</button>
+							<button class="quickSelectButton continentButton" id="Europe_button">Europe</button>
+						 </div>
+						 <div>
+							<button class="quickSelectButton continentButton" id="NorthAmerica_button">North America</button>
+							<button class="quickSelectButton continentButton" id="SouthAmerica_button">South America</button>
+							<button class="quickSelectButton continentButton" id="Oceania_button">Oceania</button>
+						</div>
+					 </div>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div id="chart"></div>
+			<div id="lineChart"></div>
+		<div>
+	</div>
+
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+	<script src="https://unpkg.com/topojson@3"></script>
+
+	<script src="scatter_plot.js"></script>
+	<script src="line_chart.js"></script>
+	<script src="world_map.js"></script>
+	<script src="base.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+</body>
